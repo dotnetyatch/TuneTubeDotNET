@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Pictures, Movies Album Arts";
+    @model IEnumerable<QueryResult>
+}
+
+<div class="row" id="search">
+
+    <div class="col-md-6">
+        <form>
+            <div class="form-group">
+                <label>Enter Movie or Video title:</label>
+                <input type="text" name="title" class="form-control" />
+            </div>
+            <div class="form-group">
+
+                <input type="submit" name="Add" class="btn btn-success" />
+            </div>
+
+        </form>
+    </div>
+    <div class="col-md-6">
+    <h2>Result</h2>
+    <ul>
+        @foreach (var item in Model)
+        {
+        <li class="picitem"> <img src=" @Html.DisplayFor(modelItem => item.url)" /> </li>
+        }
+
+    </ul>
+    </div>
+</div>
