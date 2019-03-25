@@ -61,7 +61,7 @@ using TuneTube.Models;
             WriteLiteral("\r\n<div class=\"row\" id=\"search\">\r\n\r\n    <div class=\"col-md-8 col-md-offset-2\">\r\n        ");
             EndContext();
             BeginContext(187, 355, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75040608b93c42bd8579e8be850ae4cf", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6b6495ea69d4287810e20f5a37cf33f", async() => {
                 BeginContext(193, 342, true);
                 WriteLiteral(@"
             <div class=""form-group"">
