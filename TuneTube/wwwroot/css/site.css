@@ -5,6 +5,9 @@ body {
     padding-bottom: 20px;
 }
 
+h2{
+    text-align:center;
+}
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 address{
@@ -14,10 +17,11 @@ address{
     padding-left: 15px;
     padding-right: 15px;
 }
-.picitem{
+.picitem {
     margin-bottom: 5px;
-    text-decoration:none;
-    list-style-type:none;
+    text-decoration: none;
+    list-style-type: none;
+    display: inline-block;
 }
 
 #Contact span {
