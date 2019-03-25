@@ -7,7 +7,15 @@ namespace TuneTube.Models
 {
     public class QueryResult
     {
-       public byte picture  { get; set; }
        public string url { get; set; }
+        public bool Empty
+        {
+            get
+            {
+                return (
+                        string.IsNullOrWhiteSpace(url)
+                );
+            }
+        }
     }
 }

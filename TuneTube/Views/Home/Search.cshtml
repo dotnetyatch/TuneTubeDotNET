@@ -8,7 +8,7 @@
     <div class="col-md-8 col-md-offset-2">
         <form>
             <div class="form-group">
-                <label>Enter Picture or Video title:</label>
+                <label >Enter Picture or Video title:</label>
                 <input type="text" name="title" class="form-control" />
             </div>
             <div class="form-group">
@@ -19,13 +19,21 @@
         </form>
     </div>
     </div>
-    <div class="col-md-8 col-md-offset-2">
-    <h2></h2>
+<div class="col-md-8 col-md-offset-2">
+    <h2></h2>@if (Model != null)
+    {
     <ul>
         @foreach (var item in Model)
         {
-        <li class="picitem"> <img src=" @Html.DisplayFor(modelItem => item.url)" width="200" height="200"/> </li>
+        <li class="picitem"> <img src=" @Html.DisplayFor(modelItem => item.url)" width="200" height="200" /> </li>
         }
-
     </ul>
+            }
+            else
+            {
+            //ViewData["Message"].ToString();
+            <h2>"OOps! Nothing found!"</h2>
+            }
+
+        
     </div>

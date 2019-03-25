@@ -26,10 +26,10 @@ namespace TuneTube.Controllers
             return View();
         }
 
-        public async Task<ActionResult> Search()
+        public async Task<ActionResult> Search(string title)
         {
-            //if (ModelState.IsValid)
-            //    {
+            if (ModelState.IsValid)
+               {
                 string BaseUrl = @"https://api.unsplash.com";
                 List<QueryResult> searchres = new List<QueryResult>();
            // QueryResult rs = new QueryResult();
@@ -46,38 +46,52 @@ namespace TuneTube.Controllers
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Client-ID", "3da40752254289e5f74de63a235f24322a8a0b92a58a9c4e96b0348faa56a14d");
 
                     //Initiate request  
-                    HttpResponseMessage Res = await client.GetAsync("/search/photos" +"?query=Cars");
+                    HttpResponseMessage Res = await client.GetAsync("/search/photos" +"?query="+title);
                        ///Checking the response is successful or not
-                       if (Res.IsSuccessStatusCode)
+                       if (title !=null && Res.IsSuccessStatusCode)
                        {
                            //Storing the response details recieved from web api   
                            var qResult = Res.Content.ReadAsStringAsync().Result;
 
                 ////////Deserializing the response recieved from web api using C# dynamic object 
                     dynamic dm = JsonConvert.DeserializeObject(qResult);
-                    //string url = dm["results"][0].urls.small;
-                    for(int i = 0; i<10; i++)
-                    {
-                        QueryResult imgobj = new QueryResult
+                        //string url = dm["results"][0].urls.small;
+                        try
                         {
-                            url = dm["results"][i].urls.small
-                        };
-                        searchres.Add(imgobj);
-                    }
-                    //rs.url = url;
-                    //searchres.Add(rs);
+                            for (int i = 0; i < 10; i++)
+                            {
 
-                     }
-                       
-                        //returning the employee list to view  
-                        return View(searchres);
+                                QueryResult imgobj = new QueryResult
+                                {
+                                    url = dm["results"][i].urls.small
+                                };
+                                searchres.Add(imgobj);
+                            }
+                            //rs.url = url;
+                            //searchres.Add(rs);
+                            return View(searchres);
+                        }
+                        catch (Exception)
+                        {
+                            ModelState.Clear();
+                            //ViewData["Message"] = "No result for search item:" +" " + title;
+                            return View();
+                        }
+                }
+
+                //  
+                ModelState.Clear();
+                    return View();
+                
+                        
                     }
                
-            //}
+            }
 
-            //else {
-            //    return View();
-            //}
+            else {
+                ModelState.Clear();
+                return View();
+            }
         }
             
  

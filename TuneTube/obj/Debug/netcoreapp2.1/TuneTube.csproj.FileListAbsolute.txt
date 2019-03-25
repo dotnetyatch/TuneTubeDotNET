@@ -30,3 +30,4 @@ C:\Users\Habeeb\source\repos\TuneTube\TuneTube\obj\Debug\netcoreapp2.1\TuneTube.
 C:\Users\Habeeb\source\repos\TuneTube\TuneTube\obj\Debug\netcoreapp2.1\TuneTube.pdb
 C:\Users\Habeeb\source\repos\TuneTube\TuneTube\obj\Debug\netcoreapp2.1\TuneTube.csproj.CopyComplete
 C:\Users\Habeeb\source\repos\TuneTube\TuneTube\obj\Debug\netcoreapp2.1\Razor\Views\Home\Search.g.cshtml.cs
+C:\Users\Habeeb\source\repos\TuneTube\TuneTube\obj\Debug\netcoreapp2.1\TuneTube.csprojAssemblyReference.cache
